@@ -1,0 +1,60 @@
+{% load static %}
+
+<!doctype html>
+<html>
+	<head>
+		<style>
+
+	 	
+	 		body{
+	 			background-color: black;
+	 			background-size:cover;
+	 			text-align: center;
+	 			color: #4bbb8a;
+	 		}
+	 		button{
+	 			background-color: #4bbb8a;
+	 			font-size: 18px;
+	 		}
+	
+
+ 
+		</style>
+		
+	</head>
+
+	
+	<body>
+
+		
+		
+		
+		<h1>Options</h1>
+
+		
+		
+		<img src="{% static 'foodApp/images/logo.png' %}" alt="Admin logo">
+
+    	<hr/>
+    	<a href="{% url 'displaystudents' %}">
+    			
+    		<button type="button">VIEW LIST OF STUDENTS</button>
+    	</a>
+    		
+    	<a href="{% url 'addstudent' %}">
+    		<button type="button">ADD STUDENT DETAILS</button>
+    	</a>
+
+    	<a href="{% url 'modifystudent' %}">
+    		<button  type="button">MODIFY STUDENT DETAILS</button>
+
+    	</a>
+
+    	<a href="{% url 'logout' %}">LOG OUT</a>
+    	
+    	
+
+		
+		
+	</body>
+</html>

@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>list of students</title>
+</head>
+
+	<style>
+
+	 	body{
+	 			background-color: black;
+	 			background-size:cover;
+	 			text-align: center;
+	 			color: #4bbb8a;
+	 	}
+	 	button{
+	 			background-color: #4bbb8a;
+	 			font-size: 15px;
+	 	}
+
+	 	table {
+  			font-family: arial, sans-serif;
+  			border-collapse: collapse;
+  			width: 100%;
+		}
+		td, th {
+  		border: 2px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+		}
+
+		th{
+			font-size: 24px;
+		}
+
+
+	 		
+
+	
+
+ 
+	</style>
+
+
+	<body>
+		
+		<h1 style="text-align:center">list of students</h1>
+		<a href="{% url 'logout' %}">LOG OUT</a>
+		<!--this is break line-->
+		<hr/>
+		
+		<img src="{% static 'foodApp/images/logo.png' %}" alt="Admin logo">
+		<hr>
+
+		<table >
+  			<tr>
+  				
+   		 		<th>Name</th>
+    			<th>Surname</th>
+    			<th>Student number</th>
+    			<th>Meal Plan</th>
+			
+
+
+
+
+    
+  			</tr>
+
+
+			<tr>
+			{% for stud in Student %}
+				
+				<td>{{stud.name}}</td>
+				<td>{{stud.surname}}</td>
+				<td>{{stud.studentNo}}</td>
+				<td>{{stud.mealPlan}}</td>
+		
+				
+			</tr>
+
+			{% endfor %}
+
+			
+
+		</table>
+
+			
+			
+			
+		
+		
+
+	</body>
+</html>

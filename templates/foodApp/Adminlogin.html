@@ -1,0 +1,72 @@
+{% load static %}
+
+
+<!Doctype html>
+<!--for search engine purpose this website is set to an english language using lang function-->
+
+<html lang="en">
+	<head>
+		<!--this is the title that appear on top of the page-->
+		<title>ADMIN PAGE</title>
+		
+	</head>
+    <!--CSS :it centers a body of a website-->
+
+	<style>
+
+	 	body{
+	 			background-color: black;
+	 			background-size:cover;
+	 			text-align: center;
+	 			color: #4bbb8a;
+	 		}
+	 		input[type=submit]{
+	 			background-color: #4bbb8a;
+	 			font-size: 30px;
+	 		}
+	 		input[type=text], input[type=password]{
+  				width: 40%;
+			}
+
+	
+
+ 
+	</style>
+
+
+	<body>
+		<!--this is the first heading .it appears first on the page.we can have h2 or h3 or ....-->
+		<!--Style is a function of css that allows centering of a text-->
+		<h1 style="text-align:center">Feedem food</h1>
+		<!--this is break line-->
+		<hr/>
+		<!--inserting an image using scr and if doesnt load it will write "Admin logo"-->
+        
+		<img src="{% static 'foodApp/images/logo.png' %}" alt="Admin logo">
+		<!--this how we write paragraph using <p>-->
+
+		{% if message %}
+			<div>{{message}}</div>
+		{%endif %}
+		<p>Below enter Username and Password</p>
+		
+		<!--when you press submit this takes me to a url.py and look a login pattern-->
+		<form action="{%url 'login' %}" method="post">
+			{%csrf_token%}
+			<!--These are form for admins to fill when login-->
+			<input type="text" placeholder="name" name="userName">
+			<!--<div> is meant to divide the each form.it can be used to divide even paragraph-->
+			<div>
+			<input type="password" placeholder="password" name="userPassword">
+		    </div>
+		    <input type="submit" value="Login" name="login">
+		</form>
+		<!--buttonfor logging in -->
+		
+		<!--link for forgot password page-->
+
+		
+		
+	</body>
+	
+</html>

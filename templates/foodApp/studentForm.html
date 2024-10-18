@@ -1,0 +1,98 @@
+
+{% load static %}
+<!Doctype html>
+<!--for search engine purpose this website is set to an english language using lang function-->
+
+<html lang="en">
+	<head>
+		<!--this is the title that appear on top of the page-->
+		<title>studentForm</title>
+		
+	</head>
+    <!--CSS :it centers a body of a website-->
+
+	<style>
+
+	 	body{
+	 			background-color: black;
+	 			background-size:cover;
+	 			text-align: center;
+	 			color: #4bbb8a;
+	 		}
+	 		input[type=submit]{
+	 			background-color: #4bbb8a;
+	 			font-size: 30px;
+	 		}
+
+	
+
+ 
+	</style>
+
+
+	<body>
+		<!--this is the first heading .it appears first on the page.we can have h2 or h3 or ....-->
+		<!--Style is a function of css that allows centering of a text-->
+		<h1 style="text-align:center">ADD/MODIFY DETAILS</h1>
+		<!--this is break line-->
+		
+		<a href="{% url 'logout' %}">LOG OUT</a>
+		<!--this is break line-->
+		<hr/>
+		<img src="{% static 'foodApp/images/logo.png' %}" alt="Admin logo">
+		<!--this how we write paragraph using <p>-->
+		<p>Below enter Username and Password</p>
+		
+		<form action="{%url 'addstudent' %}" method="post">
+			{% csrf_token %}
+			<!--These are form for admins to fill when login-->
+			<label>Name</label>
+			<input type="text"  name="name">
+
+			<!--<div> is meant to divide the each form.it can be used to divide even paragraph-->
+			<div>
+			<label>Surname</label>
+			<input type="text" name="surname">
+			<!--<div> is meant to divide the each form.it can be used to divide even paragraph-->
+			<div>
+			<label>Student number</label>
+			<input type="number" id="studentNo" name="studentNo" min=1  >
+			<!--<div> is meant to divide the each form.it can be used to divide even paragraph-->
+			</div>
+			
+
+		
+			<hr/>
+	
+			Meal plan:
+         	<input type = "radio" name = "mealPlan" value = "Breakfast&Supper">Breakfast&Supper
+         	<input type = "radio" name = "mealPlan" value = "Lunch&Supper">Lunch&Supper
+         	<input type = "radio" name = "mealPlan" value = " Breakfast,Lunch&Supper"> Breakfast,Lunch&Supper
+
+      		<hr/>
+      	 
+         	<input type = "checkbox" name = "jan" value = "jan"> jan
+         	<input type = "checkbox" name = "feb" value = "feb"> feb
+         	<input type = "checkbox" name = "mar" value = "mar"> mar
+         	<input type = "checkbox" name = "apr" value = "apr"> apr
+         	<input type = "checkbox" name = "may" value = "may"> may
+         	<input type = "checkbox" name = "jun" value = "jun"> jun
+         	<input type = "checkbox" name = "jul" value = "jul"> jul
+         	<input type = "checkbox" name = "aug" value = "aug"> aug
+         	<input type = "checkbox" name = "sep" value = "sep"> sep
+         	<input type = "checkbox" name = "oct" value = "oct"> oct
+         	<input type = "checkbox" name = "nov" value = "nov"> nov
+         	<input type = "checkbox" name = "dec" value = "dec"> dec
+         	<hr/>
+         	</div>
+         	<input type="submit" value="Submit" name="Submit" >
+
+      	</form>
+
+ 		
+		<!--buttonfor submitting the form -->
+		
+		
+	</body>
+	
+</html>

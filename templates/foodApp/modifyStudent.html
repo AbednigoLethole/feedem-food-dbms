@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ModifyDetails</title>
+</head>
+
+	<style>
+
+	 	body{
+	 			background-color: black;
+	 			background-size:cover;
+	 			text-align: center;
+	 			color: #4bbb8a;
+	 		}
+	 		
+	 		}
+	 		input[type=text] {
+  				width: 40%;
+			}
+			input[type=submit]{
+	 			background-color: #4bbb8a;
+	 			font-size: 15px
+
+	
+
+ 
+	</style>
+	
+
+	<body>
+		<!--this is the first heading .it appears first on the page.we can have h2 or h3 or ....-->
+		<!--Style is a function of css that allows centering of a text-->
+		<h1 style="text-align:center">search and modify</h1>
+		<a href="{% url 'logout' %}">LOG OUT</a>
+		<!--this is break line-->
+		<hr/>
+		<!--inserting an image using scr and if doesnt load it will write "Admin logo"-->
+        
+		<img src="{% static 'foodApp/images/logo.png' %}" alt="Admin logo">
+		<p>enter the student number :</p>
+
+
+		<form action="{%url 'modifystudent' %}" method="post">
+			
+			<input type="number" placeholder="Search.." name="searchbar" >
+			<input type="submit">Search</button>
+		    </div>
+		</form>
+		<p>results :</p>
+		
+
+	</body>
+</html>
